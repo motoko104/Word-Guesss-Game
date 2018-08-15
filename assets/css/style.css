@@ -1,10 +1,10 @@
-*{
+/**{
     background-color: black;
     max-width: 1220px;
-}
+}*/
 @font-face{
     font-family: "Triforce";
-    src: url(Triforce.ttf) format(.ttf);
+    src: url(Triforce.ttf) format(ttf);
 
 }
 header{
@@ -21,4 +21,42 @@ h1{
     
     /*src: url(Triforce.ttf);
     font-weight: 600;*/
+}
+h3{
+    color:green;
+}
+.Battle{
+    position: relative;
+    top: 20px;
+    left: 20%;
+}
+.Background{
+    width: 700px;
+    height: 250px;
+    opacity: .75;
+}
+li{
+    display: inline-block;
+    list-style-type: none;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: yellow;
+    margin: 0px 5px;
+}
+.guess-area{
+    position: relative; 
+    width: 600px;
+    left: 23.5%;
+    height: 100px;
+    z-index: 500;
+    background-color: black;
+    text-align: center;
+    font-size: 35px;
+    color:black;
+}
+.correct{
+    color: yellow;
 }

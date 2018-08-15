@@ -9,23 +9,34 @@
     <title>Legend of Zelda Hangman</title>
 </head>
 <body>
-    <header>
-        <h1> Legend of Zelda Hangman</h1>
-        <img src="" class="Triforce">  <!--this is where the triforce image will be inserted-->
+    <header class="row">
+        <div class="col-2"></div>
+        <h1 class="col-8"> Legend of Zelda Hangman</h1><!--temporary placeholder for header, will make header in corell painter-->
+        <img src="" class="Triforce">
+        <div class="col-2"></div>  <!--this is where the triforce image will be inserted-->
     </header>
-        <h3>Press any key to get started!</h2>
-    <section>
-        <h4>Letters Guessed</h4>
-    </section>
-    <section>
-        <!--word guess area-->
-    </section>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="Battle col-8">
+            <img src="assets/css/images/background_1.jpg" class="Background">
+        </div>
+        <div class="col-2"></div>    
+    </div>
+    <div class="letters">
+    <h4>Letters Guessed</h4>
+    </div>
+    <div class="guess-area">
+    <h3 class="Start">Press any key to get started!</h3>
+        <h4 class="word-area">
+            <!--word guess area-->
+        </h4>        
+    </div>
     <section>
         <!--scrore keeping/guesses remaining-->
     </section>
     <footer>
         <small>created by Amanda Padilla 2018</small>
     </footer>
-    
+<script src="assets/javascript/game.js"></script>
 </body>
 </html>
