@@ -1,7 +1,7 @@
-/**{
+*{
     background-color: black;
-    max-width: 1220px;
-}*/
+    max-width: 1440px;
+}
 @font-face{
     font-family: "Triforce";
     src: url(Triforce.ttf) format(ttf);
@@ -25,19 +25,29 @@ h1{
 h3{
     color:green;
 }
+h2{
+    color: blue;
+    font-size: 30px;
+}
+.hidePlay{
+    opacity: 0;
+}
 .Battle{
     position: relative;
     top: 20px;
-    left: 20%;
+    left: 21%;
 }
 .Background{
-    width: 700px;
+    width: 800px;
     height: 250px;
     opacity: .75;
 }
 li{
     display: inline-block;
     list-style-type: none;
+}
+.word-area li{
+    display: inline-block;
     width: 40px;
     height: 40px;
     background-color: black;
@@ -46,17 +56,66 @@ li{
     border-bottom-color: yellow;
     margin: 0px 5px;
 }
+.word-area{
+
+}
 .guess-area{
     position: relative; 
     width: 600px;
-    left: 23.5%;
+    left: 27%;
+    top: 20px;
     height: 100px;
     z-index: 500;
     background-color: black;
     text-align: center;
     font-size: 35px;
-    color:black;
+    color:white;
+    opacity: 1;
+}
+.pots{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px 1px;
+}
+.score{
+    position: absolute;
+    float: left;
+    width: 250px;
+    left: 40px;
+    top: 136px;
+    height: 300px;
+    font-size: 20px;
+    text-align: center;
+    text-anchor: middle;
+    background-color: black;
+    z-index: 501;
+    color: white;
 }
 .correct{
     color: yellow;
+}
+.letters{
+    position: absolute;
+    float: right;
+    width: 250px;
+    top: 136px;
+    left: 1070px;
+    height: 300px;
+    font-size: 20px;
+    text-align: center;
+    background-color: black;
+    z-index: 501;
+    color: white;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right:0 ;
+    height: 30px;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    background-color: black;
 }

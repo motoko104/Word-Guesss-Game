@@ -1,18 +1,62 @@
-//let alphabet = [ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z];
-let wordBank = [ "Hyrule", "Zelda", "Kokiri", "Ganondorf", "Triforce", "Epona"];
+// Zelda Hangman Mechanics
+// set of words for the hangman game
+let wordBank = [ "Hyrule", "Zelda", "Kokiri", "Ganondorf", "Triforce", "Epona","Majora"];
 
+//chooses random index from wordBank array, then for every character that string array item has, a list item is created with no character in the element and is appended to the word-area class 
 let word = wordBank[Math.floor(Math.random() * wordBank.length)];
-    for( let i=0; i< word.length; i++){
-        let newList = document.createElement('li');
-        let newBlank = document.createTextNode(word[i]);
-        newList.appendChild(newBlank);
-        var list = document.getElementsByClassName("word-area")[0];
-        list.appendChild(newList);
-    }
+        for( let i=0; i< word.length; i++){
+            let newList = document.createElement('li');
+            let newBlank = document.createTextNode('  ');
+            newList.appendChild(newBlank);
+            let list = document.getElementsByClassName("word-area")[0];
+            list.appendChild(newList);
+        }
+ // creates pots and hides the letters associated with each pot for the letters Guessed section
+let alphabet = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        for (let i = 0; i < alphabet.length; i++){
+            let newSpace = document.createElement('li');
+            let newPot = document.createTextNode("  ");
+            newSpace.appendChild(newPot);
+            let pots = document.getElementsByClassName("guessed-letters")[0];
+            pots.appendChild(newSpace);
+            newSpace.innerHTML = '<img src="assets/css/images/pot.png" class = "pots">';
+        }
 
+//when the first key is pressed the following happens 
 document.addEventListener("keyup",function(event){
-   var userGuess = event.key;
-   for( let i = 0; i != word.length(); i++){
+   let userGuess = event.key; 
+   //"Press any key to get started!" text dissappears
+    let removeStart = document.querySelectorAll('h3');
+    let hide = removeStart[0];
+    hide.className = 'hidePlay';
+
+    //did user input an alphabetic letter?
+    for(let i = 0; i < alphabet.length; i++){
+        if( userGuess === alphabet[i]){
+           document.getElementsByTagName('li').classList.remove('pots');
+            let newView = document.createTextNode(alphabet[i]);
+            newSpace.parentNode.removeChild(newSpace);
+            let reveal = document.createElement('li');
+            reveal.appendChild(newView);
+            newSpace.innerHTML = '<h5 class = "revealed"' + userGuess + '</h5>';
+
+           /* let reveal = document.getElementsByClassName('pots')[i];
+            while(reveal.hasChildNodes()){
+                reveal.removeChild(reveal.firstChild);*/
+            }
+        }
+    })
+    /*if(userGuess === alphabet.every(function (a){
+        return a > 0;
+    })){
+        for( userGuess === word.every(function (w){
+            let visiblity = document.getElementsByClassName("pots");
+            visibility.innerHTML = visibility.innerHTML.replace(/<img src="assets/css/images/pot.png" class = "pots"/g,"<h5 class = "reveal">" + usereGuess + " </h5>");
+
+        }))
+    }*
+
+   /*for( let i = 0; i != word.length(); i++){
        char c = s.charAt(i);
    }
    if (userGuess === word.indexOf(userGuess)){
@@ -20,9 +64,9 @@ document.addEventListener("keyup",function(event){
 
    };
    console.log(userGuess);
-});
+});*/
 
-
+//
 /*if(userGuess === word[""]){
         let correct = document.getElementsByClassName("word-area");
         correct.className = 'correct';
