@@ -1,51 +1,63 @@
+/* Styling for the entire page */
 *{
     background-color: black;
-    max-width: 1440px;
 }
 @font-face{
     font-family: "Triforce";
     src: url(Triforce.ttf) format(ttf);
-
 }
+
+/* Styling for the header, top row */
 header{
     margin: 0 auto;
+    height: 70px;
+}
+.titleLine{
+    text-align: center;
+}
+.title{
+    padding: 15px;
 }
 h1{
-    position: relative;
-    top: 20px;
-    left: 10%;
-    margin: 0 auto;  
-    font-size: 100px;
-    font-family: 'Triforce';
+    font-size: 40px;
     color: red;
-    
-    /*src: url(Triforce.ttf);
-    font-weight: 600;*/
 }
-h3{
-    color:green;
-}
+
+/* Styling for middle row */
+        /* Score area */
 h2{
     color: blue;
-    font-size: 30px;
+    font-size: 18px;
 }
+.score{
+    width: 100px;
+    left: 40px;
+    top: 136px;
+    height: 300px;
+    font-size: 10px;
+    color: white;
+}
+        /* Battle Image area */
 .hidePlay{
     opacity: 0;
 }
 .Battle{
-    position: relative;
-    top: 20px;
-    left: 21%;
+    left: 10%;
 }
 .Background{
-    width: 800px;
-    height: 250px;
-    opacity: .75;
+    width: 500px;
+    height: 150px;
+    opacity: .75;position: relative;
+    top: 35%;
+    left: 10%;
 }
+        /* Letters guessed area */
 li{
     display: inline-block;
     list-style-type: none;
 }
+
+/* Styling for word guessing area */
 .word-area li{
     display: inline-block;
     width: 40px;
@@ -55,6 +67,9 @@ li{
     border-bottom-width: 2px;
     border-bottom-color: yellow;
     margin: 0px 5px;
+}
+h3{
+    color:green;
 }
 .guess-area{
     position: relative; 
@@ -75,20 +90,6 @@ li{
     height: 40px;
     margin: 0px 1px;
 }
-.score{
-    position: absolute;
-    float: left;
-    width: 250px;
-    left: 40px;
-    top: 136px;
-    height: 300px;
-    font-size: 20px;
-    text-align: center;
-    text-anchor: middle;
-    background-color: black;
-    z-index: 501;
-    color: white;
-}
 .correct{
     color: yellow;
 }
@@ -105,11 +106,10 @@ li{
     z-index: 501;
     color: white;
 }
+
+/* Styling for the footer */
 .footer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right:0 ;
+    margin: 0 auto;
     height: 30px;
     text-align: center;
     padding-top: 10px;

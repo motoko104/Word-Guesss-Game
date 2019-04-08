@@ -1,6 +1,8 @@
 // Zelda Hangman Mechanics
 // set of words for the hangman game
-let wordBank = [ "Hyrule", "Zelda", "Kokiri", "Ganondorf", "Triforce", "Epona","Majora"];
+let wordBank = [ "Hyrule", "Zelda", "Kokiri", "Ganondorf", "Triforce", "Epona", "Majora", "Link"];
+// Initial counts at the beginning of the game
+let wins = 0;
 let remainingGuesses = 7;
 //chooses random index from wordBank array, then for every character that string array item has, a list item is created with no character in the element and is appended to the word-area class 
 let word = wordBank[Math.floor(Math.random() * wordBank.length)];
@@ -51,7 +53,8 @@ function Lose(){
 function reset(){
     // function to reset the page, setting wins to 0, guesses back to 7, choosing a new word and displaying it, and having all pots be covered
 }
-
+console.log(word);
+console.log(alphabet);
 //when the first key is pressed the following happens 
 document.addEventListener("keyup",function(event){
    let userGuess = event.key; 
