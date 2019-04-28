@@ -96,6 +96,7 @@ h3{
     border-bottom-width: 2px;
     border-bottom-color: yellow;
     margin: 0px 5px;
+    color: yellow;
 }
 .guess-area{
     position: inherit; 
