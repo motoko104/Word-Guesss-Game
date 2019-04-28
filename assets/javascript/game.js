@@ -78,18 +78,30 @@ function guessed(letter) {
     for (let i = 0; i < word.length; i++) {
         let wordLet = wordArea.getElementsByTagName('li')[i];
         let wordClass = wordLet.getAttribute('class');
-        if (letter === wordClass) {
-            correct(letter);
+        if (letter !== wordClass) {
+            incorrect(letter);
         } else {
-
+            correct(letter);
         }
     }
 }
 //what to do when the letter guessed is within the word being guessed
 function correct(letter) {
     let target = document.getElementsByClassName(`${letter}`);
+    let txt = document.createTextNode(`${letter}`);
+    console.log(txt);
+    console.log(target);
 
 }
+//what to do when the letter guessed is not in the word being guessed
+function incorrect(letter) {
+    let target = document.getElementsByClassName(`${letter}`);
+    let txt = document.createTextNode(`${letter}`);
+    let targetCh = document.getElementsByClassName(`${letter}`);
+    console.log(txt);
+    console.log(target);
+}
+//What to do when the game restarts
 function restart() {
     // function to reset the page, setting wins to 0, guesses back to length + 5, choosing a new word and displaying it, and having all pots be covered
 
@@ -101,11 +113,11 @@ setUp();
 document.addEventListener("keyup", function (event) {
     let userGuess = event.key;
     //"Press any key to get started!" text dissappears
-    let start = document.getElementsByTagName('section');
-    let txt = document.getElementsByClassName("Start");
-    if (start[0].hasChildNodes) {
-        start[0].removeChild(txt[0]);
-    };
+    // let start = document.getElementsByTagName('section');
+    // let txt = document.getElementsByClassName("Start");
+    // if (start[0].hasChildNodes) {
+    //     start[0].removeChild(txt[0]);
+    // };
     //Checks if the letter is guessed correctly or incorrectly
     checkWord(userGuess);
 })
